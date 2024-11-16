@@ -6,3 +6,6 @@ https://docs.google.com/spreadsheets/d/1m4bQZRZKALrs-xQmP715Kf9ARu1MXARH8EMszwxC
 
 ## CHTC GPU
 https://chtc.cs.wisc.edu/uw-research-computing/gpu-jobs
+
+## CHTC Pytorch
+https://github.com/CHTC/templates-GPUs/tree/master/conda/pytorch-1.9
