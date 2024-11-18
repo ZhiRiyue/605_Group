@@ -12,15 +12,14 @@ https://github.com/CHTC/templates-GPUs/tree/master/conda/pytorch-1.9
 
 ## File structure
 The file structure is,
-./
-    ./checkpoints/
-        # model parameters
-        model_epoch_xx.pth
-    ./datasets.py
-    ./model.py
-    ./train_parallel.py
-    ./envirments.yml
-    ./README.txt
+├── checkpoints/         
+│   ├── model_epoch_xx.pth 
+│   └── model_Final.pth    
+├── datasets.py           
+├── model.py              
+├── train_parallel.py     
+├── environments.yml      
+└── README.md
 
 ## Train
 First, please modify the path of train data and test data in the datasets.py
