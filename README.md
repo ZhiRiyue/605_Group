@@ -9,3 +9,22 @@ https://chtc.cs.wisc.edu/uw-research-computing/gpu-jobs
 
 ## CHTC Pytorch
 https://github.com/CHTC/templates-GPUs/tree/master/conda/pytorch-1.9
+
+## File structure
+The file structure is,
+./
+    ./checkpoints/
+        # model parameters
+        model_epoch_xx.pth
+    ./datasets.py
+    ./model.py
+    ./train_parallel.py
+    ./envirments.yml
+    ./README.txt
+
+## Train
+First, please modify the path of train data and test data in the datasets.py
+
+Second, please run python train_parallel.py
+
+Third, please input the num_epoches and batch_size
