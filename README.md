@@ -12,9 +12,9 @@ https://github.com/CHTC/templates-GPUs/tree/master/conda/pytorch-1.9
 
 ## File structure
 The file structure is,
+
 ├── checkpoints/         
-│   ├── model_epoch_xx.pth 
-│   └── model_Final.pth    
+│   ├── model_epoch_xx.pth or model_Final.pth    
 ├── datasets.py           
 ├── model.py              
 ├── train_parallel.py     
