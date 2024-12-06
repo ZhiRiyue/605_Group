@@ -1,0 +1,31 @@
+universe = vanilla
+### modify #######################
+executable = ./train_parallel_load_checkpoints.sh 
+###################################
+output = output/$(Cluster)_$(Process)train_parallel_load_checkpoints.out
+
+### modify #######################
+# /home/groups/STAT_DSCP/civVI/data.tar.gz 
+transfer_input_files = train_parallel_load_checkpoints.py, load_checkpoints.py, model.py, datasets.py, environment.yml, model_Final.pth, optimizer.pth, scheduler.pth, epoch.pth,  file:///staging/zwu535/data.tar.gz
+transfer_output_files = file_list.txt, optimizer.pth, scheduler.pth, epoch.pth, model_Final.pth
+###################################
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT_OR_EVICT
+
+# The conda environment will install cudatoolkit verison 11.1
+# This requirement ensures the execute node has a new enough driver to run it
+# Reference https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html
+require_gpus = (DriverVersion >= 11.1)
+request_gpus = 2
+
++WantGPULab = true
++GPUJobLength = "long"
+
+request_cpus = 1
+request_memory = 32GB
+request_disk = 48GB
+
+log = log/$(Cluster)_$(Process)train_parallel_load_checkpoints_staging.log
+error = error/$(Cluster)_$(Process)train_parallel_load_checkpoints.err
+
+queue 1
